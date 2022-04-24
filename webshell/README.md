@@ -100,7 +100,7 @@ image/GIF gif图片
 ### 5 绕过
 
 ***
-### 前台过滤绕过
+### a 前台过滤绕过
 
 #### 利用00截断上传绕过  前台检测
 
@@ -133,7 +133,7 @@ Content-Type如果为【application/octet-stream】，这一般是可运行程�
 在BurpSuite中会抓到截取的数据包，在数据包中将所上传的文件的Content-Type由【application/octet-stream】改为【image/gif】
 
 ***
-### 服务器过滤绕过
+### b 服务器过滤绕过
 
 #### Apache解析漏洞
 Apache 识别文件类型是从右向左识别的，如果如遇不认识的扩展名会向前一次识别，直到遇到能识别的扩展名，因为Apache认为一个文件可以拥有多个扩展名，哪怕没有文件名，也可以拥有多个扩展名。这种漏洞存在于使用module模式与php结合的所有版本的Apache。
@@ -163,5 +163,5 @@ copy doram.jpg/b+lubr.php/a xiaoma.jpg
 
 以上就是几种检测情况的绕过方法，真实情况下需各种方式配合使用。
 
-
+***
 
