@@ -47,3 +47,16 @@
 
     java -jar brupsuit.exe
 
+拦截包
+
+    intercept on
+    open browser
+    在brute中输入 admin/123
+
+![img_3.png](img_3.png)
+
+然后ctrl + r 发送给 repeater。修改报文，点send可以重复发包。render 可以查看reponse网页。
+
+![img_4.png](img_4.png)
+
+ctrl + i 发送给 intruder。
