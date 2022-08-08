@@ -23,6 +23,17 @@
 
 ### 3 抓包工具 brupsuit
 
+    https://www.ddosi.org/burpsuite2021-8-3/
+
+sha256 md5 校验
+
+certutil -hashfile 文件名 校验值
+
+    certutil -hashfile brupsuit sha256
+    certutil -hashfile brupsuit md5
+    
+
+
 ### 4 java 11
 
 ### 5 访问 127.0.0.1
