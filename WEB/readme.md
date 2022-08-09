@@ -32,6 +32,8 @@ certutil -hashfile 文件名 校验值
     certutil -hashfile brupsuit sha256
     certutil -hashfile brupsuit md5
     
+professional 激活 https://www.ddosi.org/burpsuite2021-8-3/
+
 
 
 ### 4 java 11
@@ -70,4 +72,14 @@ certutil -hashfile 文件名 校验值
 
 ![img_4.png](img_4.png)
 
-ctrl + i 发送给 intruder。
+ctrl + i 发送给 intruder。添加payload，攻击。
+
+报文长度排序。
+
+![img_5.png](img_5.png)
+
+![img_6.png](img_6.png)
+
+![img_7.png](img_7.png)
+
+## 2 
