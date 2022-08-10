@@ -8,12 +8,12 @@
 啥都没有，表明端口没被占用。
 
 出现下面的LiSTENING表示端口被监听
-![img_2.png](img_2.png)
+![img_2.png](img/img_2.png)
 
 解决：管理-服务-停止之前的mysql服务。
 
 
-![img_1.png](img_1.png)    
+![img_1.png](img/img_1.png)    
 
 ### 2 dvwa-2.0.1 复制到网站根目录
 
@@ -43,7 +43,7 @@ professional 激活 https://www.ddosi.org/burpsuite2021-8-3/
     用户名：admin
     密码：password
 
-![img.png](img.png)
+![img.png](img/img.png)
 
 ### login failed
 重新进入setup页面 create/reset database
@@ -66,20 +66,20 @@ professional 激活 https://www.ddosi.org/burpsuite2021-8-3/
     open browser
     在brute中输入 admin/123
 
-![img_3.png](img_3.png)
+![img_3.png](img/img_3.png)
 
 然后ctrl + r 发送给 repeater。修改报文，点send可以重复发包。render 可以查看reponse网页。
 
-![img_4.png](img_4.png)
+![img_4.png](img/img_4.png)
 
 ctrl + i 发送给 intruder。添加payload，攻击。
 
 报文长度排序。
 
-![img_5.png](img_5.png)
+![img_5.png](img/img_5.png)
 
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)
 
-![img_7.png](img_7.png)
+![img_7.png](img/img_7.png)
 
 ## 2 
