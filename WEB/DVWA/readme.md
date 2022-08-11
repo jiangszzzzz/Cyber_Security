@@ -105,3 +105,9 @@ echo “111” > 1.php 会写入“”， 采用 ^<php  ^> 方式写入，如下
 
 使用antsword连接。
 
+github 下载antsword。
+
+![img.png](img/img12.png)
+
+
+![img.png](img/img13.png)
