@@ -109,5 +109,32 @@ github 下载antsword。
 
 ![img.png](img/img12.png)
 
+如果执行命令行 会被defend杀。
 
 ![img.png](img/img13.png)
+
+## 3 file inclusion file upload 文件上传与文件包含
+
+文件包含： 观察url 盲猜 file4
+
+![img.png](img/img14.png)
+
+----
+
+文件上传： 上传webshell, 结合上一步盲猜url（加 ..\ ）, 拦截cookie antsword 添加请求信息。
+
+![img.png](img/img15.png)
+
+![img.png](img/img16.png)
+
+拿到url，上antsword。
+
+![img.png](img/img17.png)
+
+返回为空。 需要添加cookie，brupsuit拦截报文。
+
+![img.png](img/img18.png)
+
+![img.png](img/img20.png)
+
+![img.png](img/img19.png)
