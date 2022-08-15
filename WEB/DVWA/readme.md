@@ -235,3 +235,9 @@ impossible 难度下会 校验图片内容，重命名图片。
 结果如下，ASCII解码
 
 ![img.png](img/img26.png)
+
+查询数据。
+
+    SELECT+GROUP_CONCAT(user,":",password+SEPARATOR+0x3c62723e)+FROM+dvwa.users
+
+![img.png](img/img27.png)
