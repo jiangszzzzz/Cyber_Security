@@ -214,3 +214,24 @@ impossible 难度下会 校验图片内容，重命名图片。
     id =1' union select (select database()),(select user()) #
     id=1'union+select+(select+database()),(select+user())%23
 
+---
+
+安装hackbar插件。
+
+右键选择 sql注入， 添加hex（）。
+
+![img.png](img/img24.png)
+
+得到结果，ASCII解码。
+
+![img.png](img/img25.png)
+
+同样，可使用此功能查询表名（输入数据库名称）。
+
+查询列名。 添加一下命令。
+
+    and TABLE_SCHEMA = 0x64767761;     dvwa ASCII编码 64767761
+
+结果如下，ASCII解码
+
+![img.png](img/img26.png)
